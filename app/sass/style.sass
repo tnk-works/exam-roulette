@@ -1,0 +1,535 @@
+@import "app/sass/fonts.sass"
+@import "app/sass/variables.sass"
+
+*
+	margin: 0
+	padding: 0
+
+*, *:before, *:after
+	box-sizing: border-box
+
+html
+	font-family: 'Open Sans', sans-serif
+	overflow-x: hidden
+
+html, body
+	height: 100%
+	width: 100%
+	margin: 0
+
+#menuToggle,
+.menu-icon
+	display: none
+
+html, body
+	background-color: $body-color
+
+nav, footer
+	background-color: $green-color
+
+header, section
+	max-width: 1055px
+	margin: 0 auto
+
+nav
+	max-width: 100%
+	width: 100%
+
+header
+	display: flex
+	flex: 1
+	height: 210px
+
+header, section
+	background: $white-color
+
+section h2
+	padding: 40px 48px 34px 48px
+
+section article
+	padding: 0 110px 30px 110px
+	font-size: 14px
+	text-align: justify
+	line-height: 1.3em
+
+.uppercase
+	text-transform: uppercase
+
+.article-img
+	float: left
+	margin: 14px 22px 22px -26px
+
+div.logo
+	flex: 1
+	display: flex
+	align-items: center
+	flex-direction: column
+
+footer
+	display: block
+	height: 132px
+	border-bottom: solid 2px #186845
+	overflow: hidden
+	padding: 52px 0 0 0	
+
+.logo, .footer-menu, .form
+	display: flex
+	justify-content: center
+	align-items: center
+
+#checkbox, .toggle
+	display: none
+
+#bonus
+	padding-bottom: 20px
+
+.white
+	background-color: white
+
+.green
+	background-color: $green-color
+
+.flex-container
+	padding: 0
+	margin: 0
+	list-style: none
+	-ms-box-orient: horizontal
+	display: -webkit-box
+	display: -moz-box
+	display: -ms-flexbox
+	display: -moz-flex
+	display: -webkit-flex
+	display: flex
+	align-content: center
+	text-align: center
+	-webkit-flex-wrap: wrap
+	flex-wrap: wrap
+	align-items: center
+	justify-content: center
+
+.menu
+	@extend %cf
+	font-size: $menu-size
+
+.footer-menu
+	height: 18px
+
+.footer-menu ul
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: space-around
+	margin-left: -2px
+	justify-content: center
+	align-items: center
+	list-style-type: none
+	list-style: none
+
+.footer-menu li
+	flex-grow: 1
+	flex-basis: auto
+	margin: .25em 0
+	padding: 0 1em
+	border-left: 1px solid $white-color
+	flex-direction: column
+	justify-content: center
+
+
+.footer-menu li:first-child
+	border: 0px 
+
+footer nav a
+	color: $link-color !important
+	text-decoration: none
+	font-size: 13px
+
+footer nav a:hover
+	color: #ccc !important
+
+a:link
+    color: $green-color
+
+a:visited
+    color: $green-color
+
+a:hover
+    color: $dark-green
+
+a:active
+    color: $dark-green
+
+.copyright
+	text-align: center
+	color: $white-color
+	font-size: 13px
+	padding: 18px 0 32px 0
+
+.item
+	background: $green-color
+	display: block
+	float: left
+	margin: 0
+	padding: 0
+	width: $width
+	text-align: center
+
+	&.is-active a
+		color: $link-color
+	a
+		color: $link-color
+		display: block
+		padding-top: 20px
+		padding-bottom: 20px
+		text-decoration: none
+
+	&:hover
+		color: $link-color
+
+.indicator
+	position: relative
+	z-index: 0
+	max-width: 967px
+	margin: 0px 7.063em 0 7.063em	
+
+.item
+	&:last-child
+		&:before, &:after
+			content: ''
+			display: block
+			position: absolute
+			pointer-events: none
+			transition: left #{$transition-speed} ease
+
+		&:before
+			border: 6px solid transparent
+			border-top-color: $indicator-color
+			border-bottom-color: $indicator-color
+			width: 0
+			top: 0
+			bottom: 0
+			left: $width / 2
+			margin-left: -3px
+
+		&:after
+			background: $indicator-color 
+			top: -6px
+			bottom: -6px
+			left: 0
+			width: $width
+			z-index: -1
+
+@for $i from 1 through $menu-items-loop-offset
+	.item:nth-child(#{$i}).is-active ~ .item:last-child:after
+		left: $width * $i - $width
+
+	.item:nth-child(#{$i}).is-active ~ .item:last-child:before
+		left: $width * $i + $width / 2 - $width
+
+@for $i from 1 through $menu-items-loop-offset
+	.item:nth-child(#{$i}):hover ~ .item:last-child:after
+		left: ($width * $i - $width) !important
+
+	.item:nth-child(#{$i}):hover ~ .item:last-child:before
+		left: ($width * $i + $width / 2 - $width) !important
+
+.item
+	&:last-child
+		&:hover, &.is-active
+	    &:before
+	    	left: (100% - $width + $width / 2) !important
+	    &:after
+	    	left: (100% - $width) !important
+
+%cf:before, %cf:after
+	content: " "
+	display: table
+
+%cf:after
+	clear: both
+
+h1
+	font-size: (32 / 16) * 1em
+
+h2
+	display: flex
+	align-items: center
+	font-size: 22px
+	color: $body-color
+
+	&:before, &:after
+		flex: 1
+		height: 1px
+		content: ''
+		background-color: $green-color
+
+	&::before
+		margin-right: 10px
+
+	&::after
+		margin-left: 10px
+
+	&.left-aligned::before
+		flex: 0
+		margin-right: 0
+
+	&.right-aligned::after
+		flex: 0
+		margin-left: 0
+
+h4
+	padding: 5px
+
+.full-width
+	width: 100vw
+	position: relative
+	left: 50%
+	right: 50%
+	margin-top: 16px
+	margin-left: -50vw
+	margin-right: -50vw
+
+.pr-30
+	padding-right: 30px
+
+.plr-50
+	padding: 50px
+
+.pl-50
+	padding-left: 50px
+
+.ml-25
+	margin-left: 25px
+
+.pt-60
+	padding-top: 60px
+
+.input-icon-wrap
+	border: 1px solid $white-color 
+	display: inline-flex
+	flex-direction: row
+	border-radius: 3px;
+	margin: 0 30px 0 25px
+
+.input-icon
+	background: #fff
+	border-right: 1px solid $green-color
+	color: $green-color
+
+.input-with-icon
+	border: none
+	flex: 1
+
+.input-icon
+	padding: 10px
+
+.input-with-icon
+	padding: 8px
+	width: 300px
+
+input:focus::-webkit-input-placeholder
+	color: transparent
+
+input:focus:-moz-placeholder
+	color: transparent !important
+
+input:focus::-moz-placeholder
+	color: transparent !important
+
+input:focus:-ms-input-placeholder
+	color: transparent
+
+.button:focus
+.button:active
+    outline: 0 !important
+
+.button:-moz-focus-inner
+	border: 0
+	outline: 0
+
+a.button
+	display: inline-block
+	text-decoration: none
+	color: $white-color
+	padding: 10px 60px
+	max-width: 160px
+	height: 42px
+	border: none
+	font-size: 16px
+	font-weight: bold
+	-webkit-border-radius: 6px
+	-moz-border-radius: 6px
+	border-radius: 6px
+	margin: 0px auto
+
+.button
+	color: $white-color
+	max-width: 160px
+	height: 42px
+	border: none
+	font-size: 16px
+	font-weight: bold
+	-webkit-border-radius: 6px
+	-moz-border-radius: 6px
+	border-radius: 6px
+	cursor: pointer
+
+.button:active,
+.button:active
+	transform: translateY(3px)
+
+a.button.red,
+.button.red
+	background-color: $indicator-color
+	-webkit-box-shadow: 0 5px $dark-red
+	-moz-box-shadow: 0 5px $dark-red
+	box-shadow: 0 5px $dark-red
+
+a.button.green,
+.button.green
+	background-color: $green-color
+	-webkit-box-shadow: 0 5px $dark-green
+	-moz-box-shadow: 0 5px $dark-green
+	box-shadow: 0 5px $dark-green
+
+a.button.red:hover,
+.button.red:hover
+	background-color: $light-red
+
+a.button.green:hover,
+.button.green:hover
+	background-color: $light-green
+
+.subscribe-section
+	height: 160px
+
+.game-section
+	margin: 24px 76px 0px 76px
+
+.flex-item
+	flex: 1 1 18%
+	margin: 0px 17px 16px 17px
+	text-align: center
+
+.game-item
+	flex: 1 1 5%
+	padding: 5px
+	width: 170px
+	height: 256px
+	margin: 0px 30px 40px 30px
+
+.button.flex-item
+	width: 160px
+
+.input.flex-item
+	max-width: 300px
+
+.game-item > h4
+	margin-bottom: 10px
+
+.container
+	padding: 0
+	margin: 0
+	list-style: none
+	-ms-box-orient: horizontal
+	display: -webkit-box
+	display: -moz-box
+	display: -ms-flexbox
+	display: -moz-flex
+	display: -webkit-flex
+	display: flex
+	align-content: center
+	text-align: center
+	-webkit-flex-wrap: wrap
+	flex-wrap: wrap
+	align-items: center
+	justify-content: center
+
+.game
+	border-top: 1px solid $body-color
+	padding: 5px
+	height: 100px
+	display: flex
+	align-items: center
+
+.game > a
+	padding-left: 40px
+
+.game:nth-last-child(-n+2)
+	border-bottom: 1px solid $body-color
+
+.flex
+	display: -ms-flex
+	display: -webkit-flex
+	display: flex
+	width: 995px
+	flex-wrap: wrap
+
+.flex > div
+	width: 50%
+	padding: 10px
+
+.flex > div:first-child
+	margin-right: 0px
+
+.box
+	position: relative
+	display: inline-block
+
+.box .text
+	position: absolute
+	z-index: 999
+	margin: 0 auto
+	left: 0
+	right: 20px
+	text-align: center
+	top: 20%
+	color: #000
+
+.box > .img
+	background: url("../img/wheel.png")
+	margin-right: 20px
+	height: 60px
+	width: 60px
+
+
+.bonus
+	display: inline-block
+	padding-left: 50px
+	font-size: 16px
+	font-weight: bold
+	text-transform: uppercase
+
+.bonus > span
+	font-size: 20px
+	color: $green-color
+
+.star-sprite
+	background: url("../img/stars-transparent.png") repeat-x
+	font-size: 0
+	height: 27px
+	line-height: 0
+	overflow: hidden
+	text-indent: -999em
+	width: 129px
+	margin: 0 auto
+
+.star-rating
+	background: url("../img/stars.png") repeat-x
+	background-position: 0 100%
+	float: left
+	height: 27px
+	display: block
+
+.rating
+	padding: 0 30px 0 50px
+
+.break
+	overflow-wrap: break-word
+	word-wrap: break-word
+	-webkit-hyphens: auto
+	-ms-hyphens: auto
+	-moz-hyphens: auto
+	hyphens: auto
+
+// @media screens
+@import "app/sass/media.sass"

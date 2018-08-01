@@ -1,0 +1,305 @@
+@import "app/sass/variables.sass"
+
+@media (min-width: 1200px)
+	.game-item
+		margin: 0px 32px 40px 32px
+
+	.indicator
+		margin: 0 auto
+
+@media screen and (max-width: 1170px)
+	header, section
+		margin: 0 auto
+
+	.menu
+		margin: 0 auto
+
+	section article
+		padding: 0 50px 30px 50px
+
+@media screen and (max-width: 1024px)
+	header, section
+		width: 100vw
+
+@media screen and (max-width: 980px)
+	.game
+		width: 400px
+
+	.game-section
+		margin: 0px 40px 0px 40px
+
+	#bonus > .game-section
+		margin: 0px 5px 0px 5px
+
+	.rating
+		padding: 0 10px 0 30px
+
+	.bonus
+		padding-left: 10px
+
+@media screen and (max-width: 954px)
+	.form-container
+		padding: 30px 0 50px 0
+
+@media screen and (max-width: 900px)
+	.menu
+		margin: 0px
+		font-size: 0.750em
+
+	h2
+		font-size: 16px
+
+	section h2
+		padding: 40px 10px 40px 10px
+
+	section article
+		padding: 0 40px 30px 40px
+
+	.article-img
+		margin: 14px 22px 22px -20px
+
+	.game > a
+		padding-left: 10px
+
+@media screen and (max-width: 856px)
+	.full-width
+		padding-top: 25px
+
+	.input-with-icon
+		width: 250px
+
+@media screen and (max-width: 810px)
+	.game
+		width: 380px
+
+@media screen and (max-width: 800px)
+	.form-container
+		display: flex
+
+	.game
+		width: 370px
+
+	.game > a
+		padding-left: 20px
+
+	.game-section
+		margin: 0px 20px 0px 20px
+
+	section article
+		padding: 0 30px 20px 30px	
+
+	.leftimg
+    	margin: 14px 22px 22px -10px
+
+	.article-img
+		width: 15%
+
+@media screen and (max-width: 750px)
+	.game
+		width: 360px
+
+	.game > .button.flex-item
+    	font-size: 14px
+
+	.game-item
+    	margin: 0px 25px 40px 25px
+
+	.last
+    	padding-bottom: 40px
+
+@media screen and (max-width: 729px)
+	.game:nth-of-type(2n+1)
+		border-top: 1px solid $body-color
+
+	.game:nth-last-child(-n+2)
+		border-bottom: 0
+
+	.game
+    	border-top: 0
+
+@media screen and (max-width: 720px)
+	.menu
+		font-size: 0.688em
+
+	section article
+		padding: 30px 30px 0 30px
+
+	section
+		padding-top: 40px
+
+	section h2
+		padding: 0 10px 0 10px
+
+	.rating
+		padding: 0 5px 0 10px	
+
+	.footer-menu li
+		padding: 0 0.7em
+
+	.leftimg 
+    	margin: 14px 22px 22px -10px
+
+	.game-item
+    	margin: 15px 10px 40px 10px
+
+@media screen and (max-width: 650px)
+	.input.flex-item
+	    max-width: 100%
+
+	.flex-item
+		margin: 10px 5px 10px 5px
+
+	.subscribe-section
+		height: 200px
+
+	.input.flex-item
+    	width: 500px
+
+@media screen and (max-width: 600px)
+	.toggle
+		clear: both
+		display: block
+		text-align: center
+		font-size: 20px
+		line-height: 40px
+		cursor: pointer
+		width: 100%
+		height: 40px
+		color: #595959
+		background: #dbdbdb
+		transition: all .1s linear
+
+	.toggle:hover
+		background: #cecece
+
+	#checkbox:checked + label .menu li
+		opacity: 1
+		visibility: visible
+		transition: all 1.3s linear
+
+	#checkbox:checked + label .menu
+		height: 450px
+
+	.menu
+		display: flex
+		flex-direction: column
+		justify-content: space-around
+		align-items: center
+		top: 0px
+		height: 0px
+		transition: height 0.5s ease
+		font-size: 16px
+
+	.menu li
+		display: -webkit-box
+		display: -moz-box
+		display: -ms-flexbox
+		display: -moz-flex
+		display: -webkit-flex
+		display: flex
+		align-self: center
+		width: 100%
+		opacity: 0
+		visibility: hidden
+
+	.menu li a
+		font-size: 18px
+		width: 100%
+		text-align: center
+		align-self: center
+		align-content: center
+
+	.item
+		&:last-child
+			&:before, &:after
+				visibility: hidden
+
+	.footer-menu li
+		padding: 0 0.4em
+
+	h2
+		font-size: 18px
+
+	section article
+		padding: 15px 20px 15px 20px
+		font-size: 16px
+
+	.article-img
+		margin: 14px 12px 5px -10px
+		width: 25%
+
+	.input.flex-item
+		width: 100%
+		margin: 7px auto
+
+	.subscribe-section
+		margin: 0 15px
+
+@media screen and (max-width: 520px)
+	.footer-menu li
+		padding: 0 0.2em	
+
+@media (min-width: 280px) and (max-width: 480px)
+	footer
+		height: 260px
+		padding: 0
+		
+	.footer-menu ul
+		display: flex
+		flex-direction: column
+		flex-wrap: wrap
+		margin-left: 0px
+
+	.footer-menu
+		height: 90%
+
+	.footer-menu li
+		padding: 0 0.2em
+		border-left: 0
+		margin: 0
+
+	footer nav a
+		text-decoration: underline
+		font-size: 16px
+		line-height: 1.8em
+
+	.copyright
+		padding: 0
+
+	.subscribe-section
+    	height: 180px
+
+	.game
+		width: 100%
+
+	.full-width
+		padding-top: 0px
+
+@media (min-width: 280px) and (max-width: 320px)
+	.subscribe-section
+		height: 200px
+
+
+@media all and (-ms-high-contrast:none)
+	.flex-container
+		display: block
+
+	.flex-item
+		-ms-flex-positive: 1
+		-ms-flex: 1 3 200px
+	
+	.input.flex-item,
+	.game-item
+		display: inline-block
+
+	.input-icon
+		position: absolute
+		margin-top: 50px
+		padding: 9px
+
+	.input-with-icon
+		padding: 10px 0px 15px 50px
+		margin-top: 50px
+
+	.input-icon-wrap
+		border: 0
